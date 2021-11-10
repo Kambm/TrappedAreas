@@ -62,7 +62,7 @@ def simulate(nphases=151, Lmax=5, klambd=10, runs=1000, gammas=np.logspace(3,-1,
 
 	"""
 
-	jvals, kvals = np.meshgrid(np.arange(-(nphases//2), nphases//2+1)/Lmax, np.arange(-(nphases//2), nphases//2+1)/Lmax)*
+	jvals, kvals = np.meshgrid(np.arange(-(nphases//2), nphases//2+1)/Lmax, np.arange(-(nphases//2), nphases//2+1)/Lmax)
 	factors = np.exp(-(jvals**2+kvals**2)/(klambd**2))*((kvals**2 + jvals**2) <= np.max(kvals)**2)*(kvals**2+jvals**2>0)
 	sigma = np.sqrt(np.sum((factors*(2*np.pi*kvals))**2))
 
